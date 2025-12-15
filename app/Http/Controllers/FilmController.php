@@ -121,10 +121,12 @@ public function sortFilmsByYear() {
  * Nueva ruta: /filmout/countFilms
  */
 public function countFilms() {
-    $title = "Contador de Películas";
-    $films = FilmController::readFilms();
+
+    $films = self::readFilms();
     $count = count($films);
-    return view('films.list', ['count' => $count, 'title' => $title]);
+    $title = "Contador de Películas";
+
+    return view('films.count', ['count' => $count, 'title' => $title]);
 }
 
 }
