@@ -63,7 +63,7 @@ class FilmController extends Controller
         $films = FilmController::readFilms();
         
         if (is_null($year)) {
-            $title = "Listado de todas las películas (sin filtrar por año)";
+            $title = "Listado de todas las películas (Filtralas por año)";
             return view("films.list", ["films" => $films, "title" => $title]);
         }
 
@@ -88,7 +88,7 @@ class FilmController extends Controller
 
 
         if (is_null($genre)) {
-            $title = "Listado de todas las películas (sin filtrar por año)";
+            $title = "Listado de todas las películas (Filtralas por género))";
             return view("films.list", ["films" => $films, "title" => $title]);
         }
 
@@ -114,10 +114,17 @@ public function sortFilmsByYear() {
         $yearB = intval($b['year']);
         return $yearB - $yearA;
     });
-    return view('films.list', [
-        'films' => $films,
-        'title' => $title
-    ]);
+    return view('films.list', ['films' => $films,'title' => $title]);
 } 
+/**
+ * Cuenta el número total de películas y lo devuelve en una vista de contador.
+ * Nueva ruta: /filmout/countFilms
+ */
+public function countFilms() {
+    $title = "Contador de Películas";
+    $films = FilmController::readFilms();
+    $count = count($films);
+    return view('films.list', ['count' => $count, 'title' => $title]);
+}
 
 }

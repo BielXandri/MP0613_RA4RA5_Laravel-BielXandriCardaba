@@ -21,6 +21,7 @@
         <li><a href=/filmout/filmsByYear>Pelis por año</a></li>
         <li><a href=/filmout/filmsByGenre>Pelis por guenero</a></li>
         <li><a href=/filmout/sortFilms>Pelis ordenadas por año</a></li>
+        <li><a href=/filmout/count>Pelis contadas</a></li>
     </ul>
     <!-- Add Bootstrap JS and Popper.js (required for Bootstrap) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
